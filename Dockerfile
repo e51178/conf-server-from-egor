@@ -1,8 +1,7 @@
 # syntax=docker/dockerfile:1
 ## JDK from lpicanco/java11-alpine triggers problems with https access from container to out url's
-# FROM lpicanco/java11-alpine
-FROM openjdk:11-jdk-slim
-ARG JAR_FILE
+FROM lpicanco/java11-alpine
+# FROM openjdk:11-jdk-slim
 WORKDIR /app
 EXPOSE 8888
 COPY . .

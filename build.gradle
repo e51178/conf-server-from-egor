@@ -1,12 +1,21 @@
 plugins {
+    id 'java'
+    id 'idea'
     id 'org.springframework.boot' version '2.6.6'
-    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
 
     // to pack the image using 'docker'
     id "com.palantir.docker" version "0.32.0"
 
     // to run the image using 'dockerRun'
     id "com.palantir.docker-run" version "0.32.0"
+}
+
+group = 'com.bnpp.examples'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+
+repositories {
+    mavenCentral()
 }
 
 docker {
@@ -23,6 +32,9 @@ dockerRun {
     ports '8888:8888'
     // 'true' to remove container after stop
     clean true
+
+    // ATTENTION: below config storage is a separate git repo https://github.com/hyper-egor/example-configs
+    volumes 'C:\\Работа\\projects\\example-configs': '/config-storage'
 }
 
 dependencies {
