@@ -34,7 +34,8 @@ dockerRun {
     clean true
 
     // ATTENTION: below config storage is a separate git repo https://github.com/hyper-egor/example-configs
-    volumes 'C:\\Работа\\projects\\example-configs': '/config-storage'
+    //volumes 'C:\\Работа\\projects\\example-configs': '/config-storage'
+    volumes './configs': '/config-storage'
 }
 
 dependencies {
