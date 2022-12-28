@@ -1,0 +1,18 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: conf-serv-job
+  labels:
+    app: conf-server
+spec:
+  template:
+    metadata:
+      name: conf-serv-job
+    spec:
+      containers:
+      - name: conf-server
+        image: confserver
+        imagePullPolicy: Never
+        ports:
+        - containerPort: 8888
+      restartPolicy: Never

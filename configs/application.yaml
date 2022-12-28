@@ -1,0 +1,19 @@
+# ------------------- Module-A specific settings -----------------
+module-a:
+  server.port: 8081
+  profileDependentString: Default profile string
+
+
+# ------------------- Common settings for all modules ------------
+solace:
+  jms:
+    host: smf://${solace_host}:55555
+    msgVpn: default
+    clientUsername: default
+    clientPassword: default
+
+  httpApi:
+    port: 8080
+
+  # this queue is to be created in raised Solace container
+  queueName: A2Bqueue
