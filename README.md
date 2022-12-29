@@ -18,3 +18,11 @@ pwd -> /home/planb/Work/confServer/conf-server-from-egor
 docker build . -t confserver
 kubectl create -f workingJob.yaml
 kubectl get all
+
+#testPart
+cd serv&&docker build -t bokovets/kuber .
+cd ../ & docker build . -t confserver
+minikube start
+eval $(minikube -p minikube docker-env)
+kubectl delete all --all  #optional to cleanup everything 
+kubectl apply DeplAndServ.yaml depl-svc-app-v1.yaml ingressTest.yaml
