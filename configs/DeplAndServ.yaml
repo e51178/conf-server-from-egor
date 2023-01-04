@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: conf-server-app
-          image: confserver
+          image: conf_server
           imagePullPolicy: Never
           ports:
             - containerPort: 8888
@@ -24,7 +24,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: conf-service-test
+  name: conf-service
 spec:
   selector:
     app: conf-server-app

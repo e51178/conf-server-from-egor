@@ -17,3 +17,4 @@ solace:
 
   # this queue is to be created in raised Solace container
   queueName: A2Bqueue
+  myTestParam: testParamValue

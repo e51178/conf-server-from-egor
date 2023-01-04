@@ -1,10 +1,10 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: main-ingress
+  name: conf-ingress
 spec:
   rules:
-    - host: app.example.com
+    - host: conf-server.local
       http:
         paths:
           - pathType: Prefix
@@ -15,9 +15,9 @@ spec:
                 port:
                   number: 80
           - pathType: Prefix
-            path: /test
+            path: /test2
             backend:
               service:
-                name: conf-service-test
+                name: conf-service
                 port:
                   number: 8080
